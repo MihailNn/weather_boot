@@ -1,10 +1,9 @@
 package com.andersen.mihail.weather_boot.controller;
 
 import com.andersen.mihail.weather_boot.entity.City;
-import com.andersen.mihail.weather_boot.entity.Weather;
+import com.andersen.mihail.weather_boot.entity.WeatherDuplicate;
 import com.andersen.mihail.weather_boot.service.TemperatureResolver;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +19,7 @@ public class TemperatureController {
 
 //    @PostMapping(value = "/temp", produces = {MediaType.APPLICATION_JSON_VALUE})
     @PostMapping("/temp")
-    public Weather temperatureHandler(@RequestBody City city) {
+    public WeatherDuplicate temperatureHandler(@RequestBody City city) {
 
         return temperatureResolver.getTemperature(city);
     }

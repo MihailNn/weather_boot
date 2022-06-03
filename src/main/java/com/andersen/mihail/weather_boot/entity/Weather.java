@@ -1,33 +1,22 @@
 package com.andersen.mihail.weather_boot.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.*;
-
-import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
-//@AllArgsConstructor
-@Data
+@AllArgsConstructor
+@Getter
+@Setter
 public class Weather {
-//    private String temp;
     private AddMain main;
 
-//    public Weather(String temp) {
-//        this.temp = temp;
-//    }
 
-    public String getTemp() {
-
-       return this.main.temp;
-    }
-
-//    public void setTemp(String temp) {
-//        this.temp = temp;
-//    }
     @Getter
-//    @Setter
+    @Setter
     @NoArgsConstructor
-    class AddMain {
+    public static class AddMain {
         private String temp;
     }
 }
